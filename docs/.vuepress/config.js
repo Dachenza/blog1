@@ -1,3 +1,6 @@
+const moment = require('moment')
+moment.locale("zh-cn")
+
 module.exports = {
     title: '大陈子的blog',
     base: '/blog1/',
@@ -55,7 +58,18 @@ module.exports = {
             ],
         },
         displayAllHeaders: true, // 默认值：false
-        lastUpdated: 'Last Updated',
-    }
+        lastUpdated: '最近更新',
+    },
+    plugins: [
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp, lang) => {
+                    // 不要忘了安装 moment
+                    return moment(timestamp).format("LLLL")
+                }
+            }
+        ]
+    ]
 
 }
