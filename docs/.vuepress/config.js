@@ -1,5 +1,5 @@
 module.exports = {
-    base:'/docs/',
+    base:'/blog1/',
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
